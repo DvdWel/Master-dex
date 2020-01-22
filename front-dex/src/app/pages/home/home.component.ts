@@ -14,8 +14,8 @@ import { Subscriber } from 'rxjs';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  pokemons: Pokemon[];
-  chosenPokemon: Pokemon;
+  pokemons: Pokemon[] = [];
+  chosenPokemon: Pokemon | undefined;
   types: Type = {count: 0, results: []};
   generations: Generation = {count: 0, results: []};
   constructor(private PokemonService: PokemonService, private TypeService: TypeService, private GenerationService: GenerationService) {

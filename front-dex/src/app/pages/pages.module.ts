@@ -28,6 +28,6 @@ const Pages = [
     ],
     exports: [...Pages],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
-        
+
 })
 export class PagesModule { }

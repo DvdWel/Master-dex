@@ -21,7 +21,7 @@
         </div>
     </section>
     <div class="pokemon-list" >
-        <app-card *ngFor="let pokemon of pokemons | generationFilter:generation | pokemonFilter:searchTerm | typeFilter:type | caughtFilter:caught"
+        <app-card *ngFor="let pokemon of pokemons | generationFilter:generation | caughtFilter:caught | pokemonFilter:searchTerm | typeFilter:type"
                   [pokemon]="pokemon">
         </app-card>
     </div>

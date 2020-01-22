@@ -20,11 +20,11 @@ export class CardComponent implements OnInit {
     localStorage.setItem(this.pokemonStorage, `${pokemon.id}`);
   }
 
-  setBackgroundColor(types, name, type=true): string{
+  setBackgroundColor(types: Pokemon['types'] | string, name: string): string{
     const className: string = name;
     let expression: string;
 
-    if (type === true) {
+    if (typeof types !== 'string') {
       expression = types.length === 2 ?  types[1].type.name :  types[0].type.name;
     } else {
       expression = types;
@@ -66,6 +66,8 @@ export class CardComponent implements OnInit {
         return className + '--steel';
       case 'fairy':
         return className + '--fairy';
+        default:
+          throw new Error('Unexpected type: ' + expression)
       }
   }
 }

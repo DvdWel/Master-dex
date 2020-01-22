@@ -1,0 +1,65 @@
+@import '../../../assets/scss/main.scss';
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    background-color: $text;
+    width: 350px;
+    height: 300px;
+    border-radius: 10px;
+
+    &__title {
+        text-align: center;
+        font-family: $overpass;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__label {
+        font-family: $overpass;
+    }
+
+    &__input {
+        margin: 0 0px 10px 0;
+        height: 20px;
+        background-color: $input-background;
+        border:  none;
+        outline: none;
+        color: $input-text;
+        border-radius: 5px;
+        padding: 5px;
+        font-family: $overpass;
+
+        &:focus {
+            color: $input-text-focus;
+        }
+    }
+
+    &__button {
+        cursor: pointer;
+        color: $text;
+        font-family: $overpass;
+        padding: 5px;
+        background-color: $water;
+        border: 1px solid $ice;
+        border-radius: 5px;
+        outline: none;
+        margin-top: 20px;
+
+        &:hover {
+            background-color: $type-flying;
+            border: 1px solid $type-flying;
+            border-radius: 5px;
+        }
+    }
+}
