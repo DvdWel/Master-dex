@@ -3,10 +3,8 @@
         <form class="login__form" [formGroup]="loginForm"  (ngSubmit)="onSubmit()">
             <h1 class="login__title">MASTER-DEX</h1>
             <label class="login__label">* Email</label>
-            <!-- <span *ngIf="loginForm.get('email').hasError('required')">*</span> -->
             <input type="email" class="login__input" placeholder="Email" formControlName="email">
             <label class="login__label">* Password</label>
-            <!-- <span *ngIf="loginForm.get('password').hasError('required')">*</span> -->
             <input type="password" class="login__input" placeholder="Password" formControlName="password">
             <button class="login__button">Submit</button>
         </form>

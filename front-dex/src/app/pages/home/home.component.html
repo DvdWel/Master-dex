@@ -21,8 +21,14 @@
         </div>
     </section>
     <div class="pokemon-list" >
-        <app-card *ngFor="let pokemon of pokemons | generationFilter:generation | caughtFilter:caught | pokemonFilter:searchTerm | typeFilter:type"
-                  [pokemon]="pokemon">
+        <app-card *ngFor="let pokemon of pokemons | generationFilter:generation | pokemonFilter:searchTerm | typeFilter:type | caughtFilter:caught"
+            [pokemon]="pokemon"
+            (picked)="closeModel(); openModel($event)">
         </app-card>
     </div>
 </div>
+<app-pokemon-details *ngIf="activePokemon"
+                     [pokemon]="activePokemon"
+                     (toggleModel)="closeModel()"
+                     [@slideInOut]>
+</app-pokemon-details>

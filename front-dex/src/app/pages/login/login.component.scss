@@ -35,12 +35,16 @@
         margin: 10px 10px;
         height: 20px;
         background: $input-background;
-        border:  none;
+        border: 1px solid $input-text-focus;
         outline: none;
         color: $input-text;
         border-radius: 5px;
         padding: 5px;
         font-family: $overpass;
+
+        &.ng-invalid.ng-touched , .ng-invalid.ng-dirty{
+            border: 1px solid red;
+        }
 
         &:focus {
             color: $input-text-focus;

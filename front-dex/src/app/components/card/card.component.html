@@ -1,7 +1,6 @@
 <article class="pokecard" [ngClass]="setBackgroundColor(pokemon.types, 'pokecard')">
     <section class="pokecard__header">
         <div class="pokecard__options">
-            <app-favourite></app-favourite>
             <app-caught class="pokecard__option-spacing" (click)="caughtCheck(pokemon)"></app-caught>
         </div>
 

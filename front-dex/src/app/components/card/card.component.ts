@@ -8,16 +8,20 @@ import Pokemon from 'src/app/models/interfaces/Pokemon';
 })
 export class CardComponent implements OnInit {
   @Input() pokemon: Pokemon;
-  pokemonStorage: string = 'pokemon';
+  @Output() picked: EventEmitter<Pokemon> = new EventEmitter();
+  memory: number;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  getSelectedPokemon(pokemon: Pokemon) {
+    this.picked.emit(pokemon);
+  }
+
   caughtCheck(pokemon: Pokemon): void {
     pokemon.is_caught = !pokemon.is_caught;
-    localStorage.setItem(this.pokemonStorage, `${pokemon.id}`);
   }
 
   setBackgroundColor(types: Pokemon['types'] | string, name: string): string{

@@ -1,0 +1,35 @@
+<main class="details-container">
+    <article class="details" [ngClass]="cardComponent.setBackgroundColor(pokemon.types, 'pokecard')">
+        <section class="details__header">
+            <h2 class="details__name">{{ pokemon.name | titlecase }}</h2>
+
+            <div class="details__info">
+                <div class="pokecard__type" *ngIf="pokemon?.types[1]" [ngClass]="cardComponent.setBackgroundColor(pokemon?.types[1].type.name, 'pokecard__type', false)">{{ pokemon?.types[1].type.name }}</div>
+                <div class="pokecard__type" *ngIf="pokemon?.types[0]" [ngClass]="cardComponent.setBackgroundColor(pokemon?.types[0].type.name, 'pokecard__type', false)"> {{ pokemon?.types[0].type.name }}</div>
+                <button class="details__close" (click)="closeModel()"></button>
+            </div>
+        </section>
+        <figure class="details__container">
+            <img class="details__image" width="120px" height="120px" src="https://pokeres.bastionbot.org/images/pokemon/{{pokemon?.id}}.png">
+        </figure>
+        <section class="details__content">
+            <ul class="details__list">
+                <li class="details__items">Nmr: #{{ pokemon.id }}</li>
+                <li class="details__items">Height: {{ pokemon.height / 10 }} m</li>
+                <li class="details__items">Weight: {{ pokemon.weight / 10 }} kg.</li>
+                <li class="details__items">Base exp: {{ pokemon.base_experience }} exp.</li>
+                <li class="details__items">Abilities: 
+                    <span>{{ pokemon.abilities[0]?.ability.name }}</span>,
+                    <span>{{ pokemon.abilities[1]?.ability.name }}</span>,
+                    <span>{{ pokemon.abilities[2]?.ability.name }}</span>
+                </li>
+            </ul>
+        </section>
+    </article>
+
+    <figure class="details__pictures" [ngClass]="cardComponent.setBackgroundColor(pokemon.types, 'pokecard')" *ngIf="pokemon.sprites">
+            <img class="details__sprites" src="{{pokemon?.sprites.front_default}}" alt="">
+            <img class="details__sprites" src="{{pokemon?.sprites.back_default}}" alt="">
+            <img class="details__sprites" src="{{pokemon?.sprites.front_shiny}}" alt="">
+    </figure>
+</main>

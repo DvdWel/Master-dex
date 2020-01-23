@@ -1,0 +1,103 @@
+@import '../../../assets/scss/main.scss';
+
+.details-container {
+    z-index: 2;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+}
+
+.details {
+    position: relative;
+    width: 400px;
+    height: 575px;
+    font-family: $overpass;
+    border-radius: 7px;
+    background: $text;
+    border: 8px $pokemon-border solid;
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 5px;
+        align-items: flex-end;
+    }
+
+    &__name {
+        padding-left: 30px;
+        margin: 0;
+
+        @include font-face($overpass, 24px, $text);
+    }
+
+    &__info {
+        display: flex;
+        margin-bottom: 3px;
+    }
+
+    &__close {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        outline: none;
+        border: none;
+        background: transparent;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("../../../assets/icons/close.svg");
+        margin: -5px 5px 0 10px;
+        padding: 0;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        margin: 0 30px;
+        border: 5px solid $pokemon-border;
+    }
+
+    &__image {
+        width: 250px;
+        height: 250px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0 45px;
+
+        @include font-face($overpass, 18px, $text);
+    }
+
+    &__list {
+        margin: 0;
+        padding: 20px 0 0;
+        list-style: none;
+    }
+
+    &__items {
+        margin: 10px 0;
+    }
+
+    &__pictures {
+        right: -104px;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0 0;
+        border-top-right-radius: 7px;
+        border-bottom-right-radius: 7px;
+        border: 8px $pokemon-border solid;
+        border-left: none;
+    }
+}

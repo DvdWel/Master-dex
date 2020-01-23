@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+export interface InputOptions {
+  required?: boolean;
+  isValid?: boolean;
+}
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,6 +21,7 @@ export class LoginComponent implements OnInit {
     console.log(this.loginForm);
   }
 
+  @Input() public options: InputOptions;
   constructor() { }
 
   ngOnInit() {
